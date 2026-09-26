@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone 18 Pro Max - Apple</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts (Inter fallback) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        appleDark: '#000000',
+                        appleTitanium: '#1c1c1e',
+                        appleSilver: '#86868b',
+                        appleBlue: '#2997ff',
+                    },
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', '"San Francisco"', '"Inter"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Initial Load Animation */
+        .initial-load {
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeSlideUp 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        }
+
+        .delay-1 { animation-delay: 0.3s; }
+        .delay-2 { animation-delay: 0.6s; }
+        .delay-3 { animation-delay: 0.9s; }
+
+        @keyframes fadeSlideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Glassmorphism Navbar */
+        .glass-nav {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Typography */
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            font-weight: 300;
+            color: #86868b;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #ffffff 0%, #a1a1a6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 12px 24px;
+            border-radius: 999px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: scale(1.05);
+            background-color: #f5f5f7;
+        }
+        
+        .btn-outline {
+            border: 1px solid #ffffff;
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 999px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .btn-outline:hover {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        /* Bento Grid Cards */
+        .bento-card {
+            background-color: #1c1c1e;
+            border-radius: 28px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+            cursor: pointer;
+        }
+        
+        .bento-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
+        }
+
+        .bento-card img {
+            transition: transform 0.8s ease;
+        }
+
+        .bento-card:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Parallax Container */
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* Cinematic Play Button */
+        .play-btn {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .play-btn:hover {
+            background: rgba(255, 255, 255, 0.9);
+            color: black;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-appleDark text-white">
+
+    <!-- Navigation -->
+    <nav class="glass-nav fixed w-full top-0 z-50 px-4 md:px-8 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl hover:text-gray-300 transition-colors">
+                <i class="fa-brands fa-apple"></i>
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm text-appleSilver font-medium">
+                <a href="#overview" class="hover:text-white transition-colors">Overview</a>
+                <a href="#features" class="hover:text-white transition-colors">Tech Specs</a>
+                <a href="#buy" class="hover:text-white transition-colors">Buy</a>
+            </div>
+            <a href="#preorder" class="btn-primary text-sm px-4 py-2">Pre-order</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-screen flex items-center justify-center overflow-hidden pt-20" id="overview">
+        <div class="absolute inset-0 z-0 opacity-50">
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop" alt="Abstract Background" class="w-full h-full object-cover parallax-bg" style="background-position: center top;">
+        </div>
+        
+        <div class="z-10 text-center px-4 w-full max-w-5xl mx-auto flex flex-col items-center justify-center h-full pb-20">
+            <h2 class="text-appleSilver font-medium tracking-widest uppercase mb-4 text-sm md:text-base initial-load">Pro. Beyond.</h2>
+            <h1 class="hero-title gradient-text mb-2 initial-load delay-1">iPhone 18 Pro Max</h1>
+            <p class="hero-subtitle mb-8 initial-load delay-2">Vượt xa giới hạn.</p>
+            <div class="initial-load delay-3">
+                <p class="text-xl text-appleSilver mb-6">Từ $1199 hoặc $49.95/tháng trong 24 tháng*</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#buy" class="btn-primary text-lg">Mua ngay</a>
+                    <a href="#features" class="text-white hover:text-appleSilver transition-colors text-lg flex items-center gap-2 justify-center py-3 px-6">
+                        Khám phá thêm <i class="fa-solid fa-chevron-right text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-0 w-full flex justify-center translate-y-1/4 initial-load delay-3">
+            <img src="https://images.unsplash.com/photo-1695048133142-1a20484d2569?q=80&w=2000&auto=format&fit=crop" alt="iPhone 18 Pro Max Front" class="max-w-xs md:max-w-2xl w-full drop-shadow-2xl opacity-80 mix-blend-lighten" style="mask-image: linear-gradient(to top, transparent 10%, black 100%); -webkit-mask-image: linear-gradient(to top, transparent 10%, black 100%);">
+        </div>
+    </header>
+
+    <!-- Cinematic Video Section -->
+    <section class="py-32 relative bg-appleDark" id="film">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+            <h2 class="text-4xl md:text-6xl font-semibold mb-12">Góc nhìn chuẩn điện ảnh.</h2>
+            <div class="relative rounded-3xl overflow-hidden aspect-video bg-appleTitanium group cursor-pointer shadow-[0_0_50px_rgba(255,255,255,0.05)]">
+                <img src="https://images.unsplash.com/photo-1616423640778-28d1b53229bd?q=80&w=2000&auto=format&fit=crop" alt="Cinematic Camera" class="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-700">
+                <div class="absolute inset-0 flex flex-col items-center justify-center">
+                    <button class="play-btn mb-4">
+                        <i class="fa-solid fa-play ml-1"></i>
+                    </button>
+                    <span class="text-lg font-medium tracking-wide">Watch the film</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Bento Grid -->
+    <section class="py-24 bg-appleDark" id="features">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <h2 class="text-4xl md:text-6xl font-semibold gradient-text">Đỉnh cao công nghệ.<br>Gói gọn trong tay bạn.</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[400px]">
+                
+                <!-- Card 1: Chip -->
+                <div class="bento-card md:col-span-2 p-10 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+                    <div class="z-10 relative">
+                        <h3 class="text-3xl font-semibold mb-2">Chip A20 Bionic</h3>
+                        <p class="text-appleSilver text-lg">Trí tuệ nhân tạo lượng tử. Sức mạnh vô song.</p>
+                    </div>
+                    <div class="absolute inset-0 z-0">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1500&auto=format&fit=crop" alt="Chip A20" class="w-full h-full object-cover opacity-30 mix-blend-luminosity">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1c1c1e] to-transparent"></div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Titanium -->
+                <div class="bento-card p-10 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+                    <div class="z-10 relative">
+                        <h3 class="text-3xl font-semibold mb-2">Titanium Gen 3</h3>
+                        <p class="text-appleSilver">Nhẹ hơn. Bền bỉ hơn bao giờ hết.</p>
+                    </div>
+                    <div class="absolute bottom-0 right-0 w-full h-3/4">
+                        <img src="https://images.unsplash.com/photo-1695048064977-8051776ce3a2?q=80&w=800&auto=format&fit=crop" alt="Titanium Frame" class="w-full h-full object-cover opacity-50">
+                    </div>
+                </div>
+
+                <!-- Card 3: Battery -->
+                <div class="bento-card p-10 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+                    <div class="z-10 relative">
+                        <h3 class="text-3xl font-semibold mb-2">Pin lượng tử</h3>
+                        <p class="text-appleSilver">Sử dụng liên tục 48 giờ.</p>
+                    </div>
+                    <div class="absolute -bottom-10 -right-10 opacity-20">
+                        <i class="fa-solid fa-battery-full text-9xl"></i>
+                    </div>
+                </div>
+
+                <!-- Card 4: Holographic Camera -->
+                <div class="bento-card md:col-span-2 p-10 flex flex-col justify-end" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute inset-0 z-0">
+                        <img src="https://images.unsplash.com/photo-1522069213426-38f3cb29080b?q=80&w=1500&auto=format&fit=crop" alt="Holographic Camera" class="w-full h-full object-cover opacity-40">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1c1c1e] via-transparent to-transparent"></div>
+                    </div>
+                    <div class="z-10 relative">
+                        <h3 class="text-3xl font-semibold mb-2">Camera Holographic 3D</h3>
+                        <p class="text-appleSilver text-lg max-w-md">Chụp ảnh không gian 3 chiều thực tế ảo ngay trên thiết bị. Định nghĩa lại nhiếp ảnh di động.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action / Buy Section -->
+    <section class="py-32 bg-appleDark text-center border-t border-gray-800" id="buy">
+        <div class="max-w-4xl mx-auto px-4" data-aos="zoom-in">
+            <h2 class="text-5xl md:text-7xl font-bold mb-6">Sẵn sàng để vượt xa?</h2>
+            <p class="text-2xl text-appleSilver mb-12">iPhone 18 Pro Max. Từ $1199.</p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                <button class="btn-primary text-xl px-12 py-4 w-full sm:w-auto">Pre-order ngay</button>
+                <button class="btn-outline text-xl px-12 py-4 w-full sm:w-auto">So sánh các dòng máy</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-appleTitanium py-12 px-4 text-xs text-appleSilver">
+        <div class="max-w-7xl mx-auto">
+            <p class="mb-4 pb-4 border-b border-gray-700">* Giá áp dụng cho phiên bản bộ nhớ tiêu chuẩn 256GB. Ưu đãi trả góp cần tuân thủ các điều khoản tín dụng. Tính năng Holographic yêu cầu kính Apple Vision Pro để trải nghiệm tối đa.</p>
+            
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <p>Copyright © 2026 Apple Inc. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="border-l border-gray-600 pl-4 hover:text-white transition-colors">Terms of Use</a>
+                    <a href="#" class="border-l border-gray-600 pl-4 hover:text-white transition-colors">Sales Policy</a>
+                    <a href="#" class="border-l border-gray-600 pl-4 hover:text-white transition-colors">Legal</a>
+                </div>
+                <p>Vietnam</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS Animation Library
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 50
+        });
+
+        // Simple Parallax Effect for Hero Background
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxBg = document.querySelector('.parallax-bg');
+            if(parallaxBg) {
+                parallaxBg.style.transform = `translateY(${scrolled * 0.4}px)`;
+            }
+        });
+    </script>
+</body>
+</html>
